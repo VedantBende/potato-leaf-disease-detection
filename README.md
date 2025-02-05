@@ -1,61 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Potato Leaf Disease Detection</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 40px;
-            background-color: #f8f9fa;
-        }
-        h1, h2, h3 {
-            color: #343a40;
-        }
-        code {
-            background-color: #e9ecef;
-            padding: 3px;
-            border-radius: 4px;
-        }
-        pre {
-            background: #e9ecef;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-    </style>
-</head>
-<body>
-    <h1>Potato Leaf Disease Detection</h1>
-    
-    <h2>Overview</h2>
-    <p>This project uses a Convolutional Neural Network (CNN) to detect diseases in potato leaves, specifically targeting early blight and late blight.</p>
-    
-    <h2>Project Structure</h2>
-    <ul>
-        <li><code>datasets/</code> - Contains training and testing images.</li>
-        <li><code>Train_potato_disease.ipynb</code> - Jupyter Notebook for training the model.</li>
-        <li><code>app.py</code> - Streamlit web application for disease detection.</li>
-        <li><code>requirements.txt</code> - Required dependencies.</li>
-        <li><code>trained_plant_disease_model.keras</code> - Trained CNN model.</li>
-    </ul>
-    
-    <h2>Installation</h2>
-    <p>Follow these steps to set up the project:</p>
-    <pre><code>git clone https://github.com/VedantBende/potato-leaf-disease-detection.git
-cd potato-leaf-disease-detection
-python3 -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt</code></pre>
-    
-    <h2>Usage</h2>
-    <p>To run the web application:</p>
-    <pre><code>streamlit run app.py</code></pre>
-    <p>Upload an image of a potato leaf to get a diagnosis.</p>
-    
-    <h2>License</h2>
-    <p>This project is licensed under the MIT License.</p>
-</body>
-</html>
+# **Potato Leaf Disease Detection**
+
+This repository contains a machine learning-based model for detecting diseases in potato leaves. It uses image classification to identify various potato leaf diseases, aiding farmers in disease management and early detection.
+
+## **Table of Contents**
+- [Introduction](#introduction)
+- [Technologies Used](#technologies-used)
+- [Installation Instructions](#installation-instructions)
+- [Dataset](#dataset)
+- [Usage](#usage)
+- [Model Training](#model-training)
+- [Results](#results)
+- [Contributing](#contributing)
+- [License](#license)
+
+## **Introduction**
+
+This project aims to automatically detect diseases in potato leaves using deep learning. The model can classify the condition of potato leaves into different disease categories, including healthy leaves.
+
+## **Technologies Used**
+
+- **Python**: Programming language for developing the project.
+- **TensorFlow/Keras**: Deep learning framework for building the disease detection model.
+- **Flask**: Web framework used in the `app.py` file to serve the model for inference.
+- **OpenCV**: For image processing and augmentation.
+- **Matplotlib/Seaborn**: For visualizing training metrics.
+- **Pandas/Numpy**: For data manipulation.
+
+## **Installation Instructions**
+
+Follow these steps to set up the project on your local machine:
+
+1. **Clone the Repository**  
+   Clone this repository using Git:
+   ```bash
+   git clone https://github.com/VedantBende/potato-leaf-disease-detection.git
+   ```
+
+2. **Create a Virtual Environment**  
+   It's recommended to create a virtual environment:
+   ```bash
+   python -m venv env
+   ```
+
+3. **Activate the Virtual Environment**  
+   On Windows:
+   ```bash
+   .\env\Scripts\activate
+   ```
+   On macOS/Linux:
+   ```bash
+   source env/bin/activate
+   ```
+
+4. **Install Dependencies**  
+   Install the required dependencies by running:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## **Dataset**
+
+The dataset used in this project contains images of potato leaves affected by various diseases. Ensure your dataset is well-organized in folders representing different diseases (e.g., "Healthy", "Early Blight", "Late Blight").
+
+## **Usage**
+
+1. **Running the Flask Web App**  
+   To serve the model through a web app, use the following command to run `app.py`:
+   ```bash
+   python app.py
+   ```
+
+   This will start the web application, allowing you to upload an image of a potato leaf and receive a prediction.
+
+2. **Prediction**  
+   Once the app is running, visit `http://127.0.0.1:5000/` in your browser. You can upload potato leaf images to get disease predictions.
+
+## **Model Training**
+
+1. **Prepare the Dataset**  
+   Ensure the dataset is well-organized with labeled folders for each disease type.
+
+2. **Run the Jupyter Notebook for Training**  
+   Open `Train_potato_disease.ipynb` in Jupyter Notebook or Jupyter Lab. This notebook contains the steps to load the dataset, preprocess the images, and train the model.
+
+   Run all the cells to train the model. The model will be saved as `trained_plant_disease_model.keras` after training.
+
+3. **Model Checkpoint**  
+   The final trained model will be saved in the file `trained_plant_disease_model.keras`, which can be used for inference.
+
+## **Results**
+
+You can visualize the model's training results (e.g., accuracy and loss) using the plots generated in the Jupyter Notebook during training. The notebook will also display any evaluation metrics used for model performance.
+
+## **Contributing**
+
+Feel free to contribute by following these steps:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes.
+4. Commit your changes (`git commit -am 'Add new feature'`).
+5. Push to the branch (`git push origin feature-branch`).
+6. Create a pull request.
