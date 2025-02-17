@@ -11,7 +11,6 @@ This repository contains a machine learning-based model for detecting diseases i
 - [Model Training](#model-training)
 - [Results](#results)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## **Introduction**
 
